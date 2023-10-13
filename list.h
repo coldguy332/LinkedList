@@ -3,9 +3,11 @@
 
 #include <iostream>
 
+#include "node.h"
 #include "customer.h"
 #include "country.h"
-#include "node.h"
+
+class Node;
 
 class List
 {

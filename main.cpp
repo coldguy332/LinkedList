@@ -1,6 +1,8 @@
 #include <iostream>
 
+#include "prompt.h"
+
 int main() {
-    std::cout << "Hello World!" << std::endl;
+    welcome_prompt();
     return 0;
 }
