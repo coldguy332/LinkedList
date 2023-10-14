@@ -19,6 +19,13 @@ void data_input_customer() {
     for (int i = 0; i < index; i++) {
         std::cout << arr[i].get_first_name() << " " << arr[i].get_total_sales() << std::endl;
     }
+    std::cout << std::endl;
+
+    CustomerNode *trav = List->first_two;
+    while (trav->next != nullptr) {
+        std::cout << trav->newcustomer->get_first_name() << " " << trav->newcustomer->get_total_sales() << std::endl;
+        trav = trav->next;
+    }
     
 }
 

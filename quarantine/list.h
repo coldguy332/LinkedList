@@ -24,8 +24,10 @@ public:
    void push_back_customer(Customer newcustomer); 
 
 private:
-   Node* first;
-   Node* last;
+   CustomerNode* first_one;
+   CustomerNode* last_one;
+   CountryNode* first_two;
+   CountryNode* last_two;
 };
 
 #endif
