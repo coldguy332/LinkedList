@@ -13,3 +13,13 @@ void welcome_prompt() {
         choosing_dataset();
     }
 }
+
+void choose_criteria_customer(Customer* arr, CustomerList customer, int index) {
+	char choice;
+	std::cout << "You will be given three criteria to sort these customer by :" << std::endl 
+			  << "A) Household Income ; Reasoning: To see how much money they truly earn " << std::endl 
+			  << "B) Credit Score; Reasoning: To see their buying capability" << std::endl 
+			  << "C) Total Sales; Reasoning: To see how much they have bought from our company" << std::endl;
+	std::cout << "What option would you like to choose:" ;
+	std::cin >> choice;
+}
