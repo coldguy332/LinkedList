@@ -7,8 +7,8 @@
 struct CountryList {
 
     void push_back_country(Country data);
-    CountryNode* first;
-    CountryNode* last;
+    CountryNode* first = nullptr;
+    CountryNode* last = nullptr;
 
 };
 

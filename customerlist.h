@@ -7,9 +7,9 @@
 struct CustomerList {
 
     void push_back_customer(Customer data);
-    CustomerNode* first;
-    CustomerNode* last;
-    
+    CustomerNode* first = nullptr;
+    CustomerNode* last = nullptr;
+
 };
 
 #endif

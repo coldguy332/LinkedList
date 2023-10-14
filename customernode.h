@@ -5,7 +5,7 @@
 
 struct CustomerNode {
     Customer data;
-    CustomerNode* next;
+    CustomerNode* next = nullptr;
 };
 
 #endif

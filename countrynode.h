@@ -5,7 +5,7 @@
 
 struct CountryNode {
     Country data;
-    CountryNode* next;
+    CountryNode* next = nullptr;
 };
 
 #endif

@@ -5,28 +5,16 @@ void data_input_customer() {
     std::cout << "test" << std::endl;
     std::ifstream in_file;
     std::cout << "test" << std::endl;
-    in_file.open("customersmall.csv");
+    in_file.open("customer.csv");
 
     std::cout << "test" << std::endl;
     int index = line_counter(in_file);
 
     Customer arr[index];
-    List customer;
-    std::cout << "test" << std::endl;
-    array_fill_customer(in_file,arr,index,customer);
-    std::cout << "test" << std::endl;
+    CustomerList customer;
 
-    for (int i = 0; i < index; i++) {
-        std::cout << arr[i].get_first_name() << " " << arr[i].get_total_sales() << std::endl;
-    }
-    std::cout << std::endl;
+    array_list_fill_customer(in_file, arr, index, customer);
 
-    CustomerNode *trav = List->first_two;
-    while (trav->next != nullptr) {
-        std::cout << trav->newcustomer->get_first_name() << " " << trav->newcustomer->get_total_sales() << std::endl;
-        trav = trav->next;
-    }
-    
 }
 
 void choosing_dataset() {
@@ -76,7 +64,7 @@ void quoted_field(std::stringstream& ss, std::string& temp_string) {
 }
 
 
-void array_fill_customer(std::ifstream& in_file, Customer *arr, int index, List customer) {
+void array_list_fill_customer(std::ifstream& in_file, Customer *arr, int index, CustomerList& customer) {
     std::string temp_line;
     std::string temp_data;
 
@@ -118,10 +106,8 @@ void array_fill_customer(std::ifstream& in_file, Customer *arr, int index, List 
         arr[i] = Customer(temp_first,temp_last, stoi(temp_houseincome), stoi(temp_creditscore), stod(temp_totalsales));
         customer.push_back_customer(Customer(temp_first,temp_last, stoi(temp_houseincome), stoi(temp_creditscore), stod(temp_totalsales)));
     }
-
     in_file.clear(); //Resets error flags on a stream such as EOF
 	in_file.seekg(0);//sets position of next character to be read back to beginning of file
 	
-
     in_file.close(); //Closes file
 }
