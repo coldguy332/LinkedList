@@ -11,7 +11,7 @@ std::string get_criteria_customer(char choice);
 std::string get_criteria_country(char choice);
 
 void display_borders();
-void display_sorted_times(std::string criteria, double time);
+void display_sorted_times(std::string criteria, double time, std::string datastructure);
 
 
 #endif

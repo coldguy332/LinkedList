@@ -36,15 +36,19 @@ std::string get_criteria_country(char choice) {
 void display_borders() {
     std::cout << std::setw(20) << std::left << "Sorted Criteria";
     std::cout << std::setw(1) << std::left << " ";
-    std::cout << std::setw(20) << std::right << "Time" << std::endl;
-    for (int i = 0; i < 41; i++) {
+    std::cout << std::setw(20) << std::left << "Time";
+    std::cout << std::setw(1) << std::right << " ";
+    std::cout << std::setw(20) << std::right << "Data Struture" << std::endl;
+    for (int i = 0; i < 61; i++) {
         std::cout << "=";
     }
     std::cout << std::endl;
 }
 
-void display_sorted_times(std::string criteria, double time) {
+void display_sorted_times(std::string criteria, double time, std::string datastructure) {
     std::cout << std::setw(20) << std::left << criteria;
 	std::cout << std::setw(1) << std::left << " ";
-	std::cout << std::setw(20) << std::right << time << std::endl;
+	std::cout << std::setw(20) << std::left << time;
+    std::cout << std::setw(1) << std::right << " ";
+    std::cout << std::setw(20) << std::right << datastructure << std::endl;
 }

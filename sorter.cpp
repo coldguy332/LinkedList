@@ -47,7 +47,7 @@ void launch_customer_insertionsort_array(Customer* arr, int size, char choice) {
     delete[] copy;
 
     time = time / 5;
-    display_sorted_times(get_criteria_customer(choice),time);
+    display_sorted_times(get_criteria_customer(choice),time, "Array");
 }
 
 void launch_customer_insertionsort_list(CustomerList& list, char choice) {
@@ -65,7 +65,7 @@ void launch_customer_insertionsort_list(CustomerList& list, char choice) {
     copy.delete_list();
     list.delete_list();
     time = time / 5;
-    display_sorted_times(get_criteria_customer(choice), time);
+    display_sorted_times(get_criteria_customer(choice), time, "List");
 }
 
 void launch_country_insertionsort_array(Country* arr, int size, char choice) {
@@ -84,7 +84,7 @@ void launch_country_insertionsort_array(Country* arr, int size, char choice) {
 
     delete[] copy;
     time = time / 5;
-    display_sorted_times(get_criteria_country(choice),time);
+    display_sorted_times(get_criteria_country(choice),time, "Array");
 }
 
 void launch_country_insertionsort_list(CountryList& list, char choice) {
@@ -101,7 +101,7 @@ void launch_country_insertionsort_list(CountryList& list, char choice) {
     copy.delete_list();
     list.delete_list();
     time = time / 5;
-    display_sorted_times(get_criteria_country(choice), time);
+    display_sorted_times(get_criteria_country(choice), time, "List");
 }
 
 void insertion_sort_country(Country* arr, int size, CountryList& country, char choice) {
