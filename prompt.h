@@ -4,7 +4,8 @@
 #include <iostream>
 
 #include "datainput.h"
-#include "insertionsort.h"
+#include "sorter.h"
+#include "displaydata.h"
 
 void welcome_prompt();
 void choose_criteria_customer(Customer* arr, CustomerList customer, int index);

@@ -22,6 +22,8 @@ void choose_criteria_customer(Customer* arr, CustomerList customer, int index) {
 			  << "C) Total Sales; Reasoning: To see how much they have bought from our company" << std::endl;
 	std::cout << "What option would you like to choose:" ;
 	std::cin >> choice;
+
+	insertion_sort_customer(arr, index, customer, choice);
 }
 
 void choose_criteria_country(Country* arr, CountryList country, int index) {
@@ -33,6 +35,5 @@ void choose_criteria_country(Country* arr, CountryList country, int index) {
 	std::cout << "What option would you like to choose:" ;
 	std::cin >> choice;
 
-	country_sort_list(country, choice);
-	country.temp_print();
+	insertion_sort_country(arr, index, country, choice);
 }

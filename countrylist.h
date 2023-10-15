@@ -7,7 +7,7 @@
 struct CountryList {
 
     void push_back_country(Country data);
-    void temp_print();
+    void delete_list();
     CountryNode* first = nullptr;
     CountryNode* last = nullptr;
 

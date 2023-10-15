@@ -13,12 +13,13 @@ void CustomerList::push_back_customer(Customer data) {
     }
 }
 
-void CustomerList::temp_print() {
-    CustomerNode* trav = this->first;
-    while (trav != nullptr) {
-        std::cout << trav->data.get_first_name() << " " << trav->data.get_credit_score()  
-        << " " << trav->data.get_household_income() << " " <<trav->data.get_total_sales() << std::endl;
-        trav = trav->next;
+void CustomerList::delete_list() {
+    CustomerNode* current = this->first;
+    while (current != nullptr) {
+        CustomerNode* del = current;
+        current = current->next;
+        delete del;
     }
-    std::cout << std::endl;
+    this->first = nullptr;
+    this->last = nullptr;
 }
