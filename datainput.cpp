@@ -177,7 +177,7 @@ void array_list_fill_country(std::ifstream& in_file, Country* arr, int index, Co
 
         unknown_checker(temp_emissions,temp_population,temp_area);
 
-        arr[i] = Country(temp_countryname, stod(temp_emissions), stol(temp_population), stoi(temp_area));
+        arr[i] = Country(temp_countryname, stold(temp_emissions), stol(temp_population), stoi(temp_area));
         customer.push_back_country(Country(temp_countryname, stol(temp_emissions), stol(temp_population), stoi(temp_area)));
     }
     in_file.clear(); //Resets error flags on a stream such as EOF
