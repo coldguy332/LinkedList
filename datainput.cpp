@@ -24,7 +24,6 @@ void data_input_country() {
 
     array_list_fill_country(in_file,arr,index,country);
     choose_criteria_country(arr, country, index);
-
 }
 
 
@@ -90,7 +89,7 @@ void density_check(std::string& density){
 
 void unknown_checker(std::string& emissions, std::string& population, std::string& area) {
     if (emissions.empty()) {
-		emissions = "-1";
+		emissions = "-1.0";
 	}
 	if (population.empty()) {
 		population = "-1" ;
@@ -178,7 +177,7 @@ void array_list_fill_country(std::ifstream& in_file, Country* arr, int index, Co
 
         unknown_checker(temp_emissions,temp_population,temp_area);
 
-        arr[i] = Country(temp_countryname, stol(temp_emissions), stol(temp_population), stoi(temp_area));
+        arr[i] = Country(temp_countryname, stod(temp_emissions), stol(temp_population), stoi(temp_area));
         customer.push_back_country(Country(temp_countryname, stol(temp_emissions), stol(temp_population), stoi(temp_area)));
     }
     in_file.clear(); //Resets error flags on a stream such as EOF

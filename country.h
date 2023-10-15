@@ -13,10 +13,10 @@
 class Country {
 	public:
 		Country();
-		Country(std::string country_name, long int emissions, long int population, int area);
+		Country(std::string country_name, long double emissions, long int population, int area);
 
 		std::string get_name() const;
-		long int get_emissions() const;
+		long double get_emissions() const;
 		long int get_population() const;
 		int get_area() const;
 
@@ -24,7 +24,7 @@ class Country {
 
 	private:
 		std::string country_name; //'1'
-		long int emissions; // '5'
+		long double emissions; // '5'
 		long int population; //6
 		int area; //7
 };

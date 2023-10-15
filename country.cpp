@@ -5,7 +5,7 @@
 **/
 Country::Country() {
 	this->country_name = "";
-	this->emissions = 0;
+	this->emissions = 0.0;
 	this->population = 0;
 	this->area = 0;
 }
@@ -15,7 +15,7 @@ Country::Country() {
  * will be utilized when parsing through csv file
  * @param all parameters will be stored as data members
 **/
-Country::Country(std::string country_name, long int emissions, long int population, int area) {
+Country::Country(std::string country_name, long double emissions, long int population, int area) {
 	this->country_name = country_name;
 	this->emissions = emissions;
 	this->population = population;
@@ -29,7 +29,7 @@ std::string Country::get_name() const {
 	return this->country_name;
 }
 
-long int Country::get_emissions() const {
+long double Country::get_emissions() const {
 	return this->emissions;
 }
 /**
@@ -56,7 +56,7 @@ int Country::get_area() const {
 bool Country::get_data_member(char criteria){
 	switch (criteria) {
         case 'A':
-            return this->get_emissions() == -1;
+            return this->get_emissions() == -1.0;
         case 'B':
             return this->get_population() == -1;
         case 'C':
