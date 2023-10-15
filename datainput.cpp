@@ -16,7 +16,7 @@ void data_input_customer() {
 
 void data_input_country() {
     std::ifstream in_file;
-    in_file.open("smallfile.csv");
+    in_file.open("countries.csv");
     int index = line_counter(in_file);
 
     Country *arr= new Country[index];
