@@ -140,7 +140,7 @@ void customer_sort_array(Customer* arr, int index, char choice) {
     for (int i = 1; i < index; i++) {
         Customer next = arr[i];
         int j = i;
-        while (j > 0 && customer_criteria_array(arr, next, index, choice)) {
+        while (j > 0 && customer_criteria_array(arr, next, j, choice)) {
             arr[j] = arr[j - 1];
             j--;
         }
@@ -152,7 +152,7 @@ void country_sort_array(Country* arr, int index, char choice) {
     for (int i = 1; i < index; i++) {
         Country next = arr[i];
         int j = i;
-        while (j > 0 && country_criteria_array(arr, next, index, choice)) {
+        while (j > 0 && country_criteria_array(arr, next, j, choice)) {
             arr[j] = arr[j - 1];
             j--;
         }
