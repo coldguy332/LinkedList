@@ -41,7 +41,6 @@ void choose_criteria_country(Country* arr, CountryList country, int index) {
 	for (int i = 0; i < 50; i++) {
 		std::cout << arr[i].get_emissions() << std::endl;
 	}
-
 	//choose_displayed_data_country(arr, index, choice);
 }
 

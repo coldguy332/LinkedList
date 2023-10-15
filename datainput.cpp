@@ -16,7 +16,7 @@ void data_input_customer() {
 
 void data_input_country() {
     std::ifstream in_file;
-    in_file.open("countries.csv");
+    in_file.open("smallfile.csv");
     int index = line_counter(in_file);
 
     Country *arr= new Country[index];
@@ -53,8 +53,7 @@ int line_counter(std::ifstream& in_file) {
 
 	getline(in_file, temp_line); //First row of csv file unnecessary, and therefore passed through
 
-	while (!in_file.eof()) { //While loop functions until the end of the csv file
-		getline(in_file,temp_line); //Cycles through the rows one by one
+	while (getline(in_file, temp_line)) { //While loop functions until the end of the csv file
 		index++; //index number increments
 	}
 
