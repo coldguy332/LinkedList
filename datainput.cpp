@@ -10,6 +10,7 @@ void data_input_customer() {
     CustomerList customer;
 
     array_list_fill_customer(in_file, arr, index, customer);
+    choose_criteria_customer(arr,customer,index);
 
 }
 
@@ -22,6 +23,7 @@ void data_input_country() {
     CountryList country;
 
     array_list_fill_country(in_file,arr,index,country);
+    choose_criteria_country(arr, country, index);
 
 }
 

@@ -5,6 +5,7 @@
 #include <fstream>
 #include <sstream>
 
+#include "prompt.h"
 #include "customerlist.h"
 #include "countrylist.h"
 #include "customer.h"

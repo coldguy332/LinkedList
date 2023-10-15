@@ -12,3 +12,13 @@ void CountryList::push_back_country(Country data) {
         this->last = newnode;
     }
 }
+
+void CountryList::temp_print() {
+    CountryNode* trav = this->first;
+    while (trav != nullptr) {
+        std::cout << trav->data.get_name() << " " << trav->data.get_emissions()
+        << " " << trav->data.get_population() << " " <<trav->data.get_area() << std::endl;
+        trav = trav->next;
+    }
+    std::cout << std::endl;
+}

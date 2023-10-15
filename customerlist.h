@@ -7,6 +7,7 @@
 struct CustomerList {
 
     void push_back_customer(Customer data);
+    void temp_print();
     CustomerNode* first = nullptr;
     CustomerNode* last = nullptr;
 
