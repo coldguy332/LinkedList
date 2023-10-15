@@ -85,6 +85,7 @@ void display_sorted_country_borders() {
 }
 
 void display_customer_data(Customer* arr, int index, char choice) {
+    display_sorted_customer_borders();
     if (choice == 'A') {
         for (int i = 0; i < 50; i++) {
             std::cout << std::setw(20) << std::left << arr[i].get_household_income();
@@ -110,6 +111,7 @@ void display_customer_data(Customer* arr, int index, char choice) {
 }
 
 void display_country_data(Country* arr,int index, char choice, char criteria) {
+    display_sorted_country_borders();
     if (choice == 'A') {
         int temp_index = 0;
         while (temp_index < index) {
