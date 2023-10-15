@@ -53,13 +53,13 @@ int Country::get_area() const {
  * this function will help mitigate the results (later explained in actual function)
  * @choice criteria to be sorted by
 **/
-bool Country::get_data_member(int choice){
-	switch (choice) {
-        case 1:
+bool Country::get_data_member(char criteria){
+	switch (criteria) {
+        case 'A':
             return this->get_emissions() == -1;
-        case 2:
+        case 'B':
             return this->get_population() == -1;
-        case 3:
+        case 'C':
             return this->get_area()  == -1;
         default:
             return false;

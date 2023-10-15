@@ -105,13 +105,13 @@ void launch_country_insertionsort_list(CountryList& list, char choice) {
 }
 
 void insertion_sort_country(Country* arr, int size, CountryList& country, char choice) {
-    display_borders();
+    display_time_borders();
     launch_country_insertionsort_list(country, choice);
     launch_country_insertionsort_array(arr, size, choice);
 }
 
 void insertion_sort_customer(Customer* arr, int size, CustomerList& customer, char choice) {
-    display_borders();
+    display_time_borders();
     launch_customer_insertionsort_list(customer,choice);
     launch_customer_insertionsort_array(arr,size,choice);
 }

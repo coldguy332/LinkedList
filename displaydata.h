@@ -5,13 +5,21 @@
 #include <iomanip>
 
 #include "customer.h"
-#include "customerlist.h"
+#include "country.h"
+
 
 std::string get_criteria_customer(char choice);
 std::string get_criteria_country(char choice);
 
-void display_borders();
+void display_time_borders();
 void display_sorted_times(std::string criteria, double time, std::string datastructure);
+
+void display_sorted_customer_borders();
+void display_sorted_country_borders();
+
+void display_customer_data(Customer* arr, int index, char choice);
+void display_country_data(Country* arr,int index, char choice, char criteria);
+
 
 
 #endif

@@ -11,4 +11,7 @@ void welcome_prompt();
 void choose_criteria_customer(Customer* arr, CustomerList customer, int index);
 void choose_criteria_country(Country* arr, CountryList country, int index);
 
+void choose_displayed_data_customer(Customer* arr, int index);
+void choose_displayed_data_country(Country* arr, int index, char criteria);
+
 #endif

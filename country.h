@@ -20,7 +20,7 @@ class Country {
 		long int get_population() const;
 		int get_area() const;
 
-		bool get_data_member(int choice);
+		bool get_data_member(char criteria);
 
 	private:
 		std::string country_name; //'1'

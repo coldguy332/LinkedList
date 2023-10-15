@@ -24,6 +24,8 @@ void choose_criteria_customer(Customer* arr, CustomerList customer, int index) {
 	std::cin >> choice;
 
 	insertion_sort_customer(arr, index, customer, choice);
+
+	choose_displayed_data_customer(arr, index);
 }
 
 void choose_criteria_country(Country* arr, CountryList country, int index) {
@@ -36,4 +38,24 @@ void choose_criteria_country(Country* arr, CountryList country, int index) {
 	std::cin >> choice;
 
 	insertion_sort_country(arr, index, country, choice);
+
+	choose_displayed_data_country(arr, index, choice);
+}
+
+void choose_displayed_data_customer(Customer* arr, int index) {
+	char choice;
+
+	std::cout << std::endl;
+	std::cout << "Sorting has been completed. Would you like to display Top 50 or Bottom 50 of the sorted items(A/B):" ;
+	std::cin >> choice;
+	display_customer_data(arr, index, choice);
+}
+
+void choose_displayed_data_country(Country* arr, int index, char criteria) {
+	char choice;
+
+	std::cout << std::endl;
+	std::cout << "Sorting has been completed. Would you like to display Top 50 or Bottom 50 of the sorted items(A/B):" ;
+	std::cin >> choice;
+	display_country_data(arr, index, choice, criteria);
 }
