@@ -38,8 +38,11 @@ void choose_criteria_country(Country* arr, CountryList country, int index) {
 	std::cin >> choice;
 
 	insertion_sort_country(arr, index, country, choice);
+	for (int i = 0; i < 50; i++) {
+		std::cout << arr[i].get_emissions() << std::endl;
+	}
 
-	choose_displayed_data_country(arr, index, choice);
+	//choose_displayed_data_country(arr, index, choice);
 }
 
 void choose_displayed_data_customer(Customer* arr, int index) {
