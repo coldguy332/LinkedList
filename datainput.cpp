@@ -3,7 +3,7 @@
 
 void data_input_customer() {
     std::ifstream in_file;
-    in_file.open("customersmall.csv");
+    in_file.open("customer.csv");
     int index = line_counter(in_file);
 
     Customer *arr = new Customer[index];
