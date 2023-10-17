@@ -80,3 +80,16 @@ void QueueCustomer::delete_queue() {
     this->head = nullptr;
     this->tail = nullptr;
 }
+
+void QueueCustomer::offload_data(std::ofstream& off) {
+    off.open("save.csv");
+    off << "First Name" << "," << "Last Name" << "," << "Total Sales" << std::endl;
+    CustomerNode* trav = this->head;
+    while (trav != nullptr) {
+        off << trav->data.get_first_name() << "," << trav->data.get_last_name() << "," << trav->data.get_total_sales();
+        if (trav->next != nullptr) {
+            std::cout << std::endl;
+        }
+        trav = trav->next;
+    }
+}

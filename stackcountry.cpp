@@ -73,3 +73,16 @@ void StackCountry::delete_stack() {
     }
     this->head = nullptr;
 }
+
+void StackCountry::offload_data(std::ofstream& off) {
+    off.open("save.csv");
+    off << "Country" << "," << "Year" << "," << "Emissions" << std::endl;
+    CountryNode* trav = this->head;
+    while (trav != nullptr) {
+        off << trav->data.get_name() << "," << trav->data.get_year() << "," << trav->data.get_emissions();
+        if (trav->next != nullptr) {
+            std::cout << std::endl;
+        }
+        trav = trav->next;
+    }
+}

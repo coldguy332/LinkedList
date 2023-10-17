@@ -76,3 +76,15 @@ void StackCustomer::delete_stack() {
     }
     this->head = nullptr;
 }
+void StackCustomer::offload_data(std::ofstream& off) {
+    off.open("save.csv");
+    off << "First Name" << "," << "Last Name" << "," << "Customer since date" << std::endl;
+    CustomerNode* trav = this->head;
+    while (trav != nullptr) {
+        off << trav->data.get_first_name() << "," << trav->data.get_last_name() << "," << trav->data.get_customer_since();
+        if (trav->next != nullptr) {
+            std::cout << std::endl;
+        }
+        trav = trav->next;
+    }
+}

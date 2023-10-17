@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <iomanip>
+#include <fstream>
 
 #include "customer.h"
 #include "customernode.h"
@@ -18,6 +19,8 @@ struct QueueCustomer {
     void print();
 
     void delete_queue();
+
+    void offload_data(std::ofstream& off);
 
     CustomerNode* head;
     CustomerNode* tail;

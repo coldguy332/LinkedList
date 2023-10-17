@@ -237,12 +237,15 @@ void country_queue_interaction(QueueCountry*& country) {
 	}
 }
 
-void save_stack_customer() {
+void save_stack_customer(StackCustomer*& customer) {
 	char choice;
 	std::cout << std::endl;
 	std::cout << "Would you like to save your stack (Y/n):";
 	if (choice == 'Y' || choice == 'y') {
-
+		std::ofstream off_file;
+		customer->offload_data(off_file);
+		customer->delete_stack();
+		delete customer;
 	}
 	std::cout << std::endl;
 	std::cout << "Would you like to re-run the program? (Y/n):";
@@ -255,12 +258,15 @@ void save_stack_customer() {
 	}
 }
 
-void save_stack_country() {
+void save_stack_country(StackCountry*& country) {
 	char choice;
 	std::cout << std::endl;
 	std::cout << "Would you like to save your stack (Y/n):";
 	if (choice == 'Y' || choice == 'y') {
-
+		std::ofstream off_file;
+		country->offload_data(off_file);
+		country->delete_stack();
+		delete country;
 	}
 	std::cout << std::endl;
 	std::cout << "Would you like to re-run the program? (Y/n):";
@@ -273,12 +279,15 @@ void save_stack_country() {
 	}
 }
 
-void save_queue_customer() {
+void save_queue_customer(QueueCustomer*& customer) {
 	char choice;
 	std::cout << std::endl;
 	std::cout << "Would you like to save your stack (Y/n):";
 	if (choice == 'Y' || choice == 'y') {
-
+		std::ofstream off_file;
+		customer->offload_data(off_file);
+		customer->delete_queue();
+		delete customer;
 	}
 	std::cout << std::endl;
 	std::cout << "Would you like to re-run the program? (Y/n):";
@@ -291,12 +300,15 @@ void save_queue_customer() {
 	}
 }
 
-void save_country_customer() {
+void save_country_customer(QueueCountry*& country) {
 	char choice;
 	std::cout << std::endl;
 	std::cout << "Would you like to save your stack (Y/n):";
 	if (choice == 'Y' || choice == 'y') {
-
+		std::ofstream off_file;
+		country->offload_data(off_file);
+		country->delete_queue();
+		delete country;
 	}
 	std::cout << std::endl;
 	std::cout << "Would you like to re-run the program? (Y/n):";

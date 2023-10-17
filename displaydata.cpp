@@ -92,7 +92,7 @@ void display_customer_data(Customer* arr, int index, char choice) {
             std::cout << std::setw(1) << std::left << " ";
             std::cout << std::setw(20) << std::left << arr[i].get_credit_score();
             std::cout << std::setw(1) << std::left << " ";
-            std::cout << std::setw(20) << std::right << arr[i].get_total_sales();
+            std::cout << std::setw(20) << std::right << std::setprecision(2) << arr[i].get_total_sales();
             std::cout << std::setw(1) << std::right << " ";
             std::cout << std::setw(20) << std::right << arr[i].get_first_name() + " " + arr[i].get_last_name() << std::endl;
         }
@@ -103,7 +103,7 @@ void display_customer_data(Customer* arr, int index, char choice) {
             std::cout << std::setw(1) << std::left << " ";
             std::cout << std::setw(20) << std::left << arr[i].get_credit_score();
             std::cout << std::setw(1) << std::left << " ";
-            std::cout << std::setw(20) << std::right << arr[i].get_total_sales();
+            std::cout << std::setw(20) << std::right << std::setprecision(2) << arr[i].get_total_sales();
             std::cout << std::setw(1) << std::right << " ";
             std::cout << std::setw(20) << std::right << arr[i].get_first_name() + " " + arr[i].get_last_name() << std::endl;
         }

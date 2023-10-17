@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <iomanip>
+#include <fstream>
 
 #include "customer.h"
 #include "customernode.h"
@@ -19,6 +20,8 @@ struct StackCustomer {
     void print();
 
     void delete_stack();
+
+    void offload_data(std::ofstream& off);
 
     CustomerNode* head;
 };

@@ -2,6 +2,7 @@
 #define PROMPT_H
 
 #include <iostream>
+#include <fstream>
 
 #include "datainput.h"
 #include "sorter.h"

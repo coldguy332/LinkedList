@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <iomanip>
+#include <fstream>
 
 #include "country.h"
 #include "countrynode.h"
@@ -20,6 +21,8 @@ struct StackCountry {
     void print();
 
     void delete_stack();
+
+    void offload_data(std::ofstream& off);
 
     CountryNode* head;
 

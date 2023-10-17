@@ -2,8 +2,7 @@
 
 
 void data_input_customer() {
-    choose_stack_or_queue();
-    /*
+    
     std::ifstream in_file;
     in_file.open("customer.csv");
     int index = line_counter(in_file);
@@ -13,7 +12,7 @@ void data_input_customer() {
 
     array_list_fill_customer(in_file, arr, index, customer);
     choose_criteria_customer(arr,customer,index);
-    */
+    
 }
 
 void data_input_country() {
