@@ -10,6 +10,10 @@
 #include "countrylist.h"
 #include "customer.h"
 #include "country.h"
+#include "stackcountry.h"
+#include "stackcustomer.h"
+#include "stackcustomer.h"
+#include "stackcustomer.h"
 
 void choosing_dataset();
 
@@ -25,5 +29,11 @@ int line_counter(std::ifstream& in_file);
 void quoted_field(std::stringstream& ss, std::string& temp_string);
 void density_check(std::string& density);
 void unknown_checker(std::string& emissions, std::string& population, std::string& area);
+
+void stack_fill(char choice);
+void stack_fill_customer(StackCustomer*& customer, std::ifstream& in_file);
+void stack_fill_country(StackCountry*& country, std::ifstream& in_file);
+
+void queue_fill(char choice);
 
 #endif

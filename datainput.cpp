@@ -172,13 +172,108 @@ void array_list_fill_country(std::ifstream& in_file, Country* arr, int index, Co
         getline(ss, temp_area, ',');
         getline(ss, temp_data, ',');
         getline(ss, temp_data);
-
         density_check(temp_data);
 
         unknown_checker(temp_emissions,temp_population,temp_area);
 
         arr[i] = Country(temp_countryname, stold(temp_emissions), stol(temp_population), stoi(temp_area));
         customer.push_back_country(Country(temp_countryname, stol(temp_emissions), stol(temp_population), stoi(temp_area)));
+    }
+    in_file.clear(); //Resets error flags on a stream such as EOF
+	in_file.seekg(0);//sets position of next character to be read back to beginning of file
+	
+    in_file.close(); //Closes file
+}
+
+
+void stack_fill(char choice) {
+    if (choice == 'A') {
+        StackCustomer* customer = new StackCustomer;
+        std::ifstream in_file;
+        in_file.open("customer.csv");
+        stack_fill_customer(customer, in_file);
+    }
+    if (choice == 'B') {
+        StackCountry* country = new StackCountry;
+        std::ifstream in_file;
+        in_file.open("country.csv");
+        stack_fill_country(country, in_file);
+    }
+}
+
+void stack_fill_customer(StackCustomer*& customer, std::ifstream& in_file) {
+    std::string temp_line, temp_data;
+
+    std::string temp_first_name;
+    std::string temp_last_name;
+    std::string temp_customer_since;
+
+    int index = line_counter(in_file);
+
+    getline(in_file,temp_line); 
+
+    for (int i = 0; i < index; i++) {
+        getline(in_file,temp_line);
+        std::stringstream ss;
+        ss.str(temp_line);
+
+        getline(ss, temp_data, ',');
+        getline(ss, temp_data, ',');
+
+        getline(ss, temp_first_name, ',');
+        getline(ss, temp_last_name, ',');
+
+        getline(ss, temp_data, ',');
+        getline(ss, temp_data, ',');
+        getline(ss, temp_data, ',');
+        getline(ss, temp_data, ',');
+        getline(ss, temp_data, ',');
+        getline(ss, temp_data, ',');
+        quoted_field(ss,temp_data); 
+        getline(ss, temp_data, ',');
+        getline(ss, temp_customer_since, ',');
+        getline(ss, temp_data, ',');
+        getline(ss, temp_data, ',');
+
+        getline(ss, temp_data, ',');
+        getline(ss, temp_data, ',');
+        getline(ss, temp_data);
+
+        customer->push_in_order(Customer(temp_first_name,temp_last_name,temp_customer_since));
+    }
+    in_file.clear(); //Resets error flags on a stream such as EOF
+	in_file.seekg(0);//sets position of next character to be read back to beginning of file
+	
+    in_file.close(); //Closes file
+}
+
+void stack_fill_country(StackCountry*& country, std::ifstream& in_file) {
+    std::string temp_line, temp_data;
+    std::string temp_year;
+    std::string temp_country_name;
+    std::string temp_emissions;
+
+    int index = line_counter(in_file);
+
+    getline(in_file,temp_line); 
+
+    for (int i = 0; i < index; i++) {
+        getline(in_file,temp_line);
+        std::stringstream ss;
+        ss.str(temp_line);
+
+        getline(ss, temp_country_name, ',');
+        getline(ss, temp_data, ',');
+        quoted_field(ss, temp_data);
+        getline(ss, temp_year, ',');
+        getline(ss, temp_emissions, ',');
+        getline(ss, temp_data, ',');
+        getline(ss, temp_data, ',');
+        getline(ss, temp_data, ',');
+        getline(ss, temp_data);
+        density_check(temp_data);
+
+        country->push_in_order(Country(stoi(temp_year),temp_country_name,stold(temp_emissions)));
     }
     in_file.clear(); //Resets error flags on a stream such as EOF
 	in_file.seekg(0);//sets position of next character to be read back to beginning of file

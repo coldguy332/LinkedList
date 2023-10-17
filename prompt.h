@@ -14,4 +14,8 @@ void choose_criteria_country(Country* arr, CountryList country, int index);
 void choose_displayed_data_customer(Customer* arr, int index);
 void choose_displayed_data_country(Country* arr, int index, char criteria);
 
+void choose_stack_or_queue();
+void choose_specific_stack();
+void choose_specific_queue();
+
 #endif
