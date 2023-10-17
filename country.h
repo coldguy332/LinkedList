@@ -14,11 +14,13 @@ class Country {
 	public:
 		Country();
 		Country(std::string country_name, long double emissions, long int population, int area);
+		Country(int year, std::string country_name, long double emissions);
 
 		std::string get_name() const;
 		long double get_emissions() const;
 		long int get_population() const;
 		int get_area() const;
+		int get_year() const;
 
 		bool get_data_member(char criteria);
 
@@ -27,6 +29,7 @@ class Country {
 		long double emissions; // '5'
 		long int population; //6
 		int area; //7
+		int year;
 };
 
 /*

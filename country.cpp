@@ -8,6 +8,7 @@ Country::Country() {
 	this->emissions = 0.0;
 	this->population = 0;
 	this->area = 0;
+	this->year = 0;
 }
 
 /**
@@ -20,6 +21,15 @@ Country::Country(std::string country_name, long double emissions, long int popul
 	this->emissions = emissions;
 	this->population = population;
 	this->area = area;
+	this->year = 0;
+}
+
+Country::Country(int year, std::string country_name, long double emissions) {
+	this->country_name = country_name;
+	this->emissions = emissions;
+	this->population = 0;
+	this->area = 0;
+	this->year = year;
 }
 
 /**
@@ -43,6 +53,10 @@ long int Country::get_population() const {
 **/
 int Country::get_area() const {
 	return this->area;
+}
+
+int Country::get_year() const {
+	return this->year;
 }
 
 /**
