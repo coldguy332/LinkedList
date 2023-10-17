@@ -1,3 +1,4 @@
+//Created by Amal Afsal for Linked List lab on 10/13/23.
 #ifndef STACKCUSTOMER_H
 #define STACKCUSTOMER_H
 

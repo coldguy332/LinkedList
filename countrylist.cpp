@@ -1,5 +1,8 @@
 #include "countrylist.h"
 
+/**
+ * Pushes back country objects in a list made for country objects;
+*/
 void CountryList::push_back_country(Country data) {
     CountryNode* newnode = new CountryNode;
     newnode->data = data;
@@ -13,6 +16,9 @@ void CountryList::push_back_country(Country data) {
     }
 }
 
+/**
+ * Deletes nodes within country list to hopefully avoid memory leaks
+*/
 void CountryList::delete_list() {
     CountryNode* current = this->first;
     while (current != nullptr) {

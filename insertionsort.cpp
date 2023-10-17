@@ -2,6 +2,10 @@
 
 #include "insertionsort.h"
 
+/**
+ * boolean that is essentially comparison for insertion sort 
+ * in this case this is for the array portion
+*/
 bool customer_criteria_array(Customer* arr, Customer next, int index, char choice) {
     switch(choice) {
         case 'A' :
@@ -15,6 +19,10 @@ bool customer_criteria_array(Customer* arr, Customer next, int index, char choic
     }
 }
 
+/**
+ * boolean that is essentially comparison for insertion sort 
+ * in this case this is for the array portion
+*/
 bool country_criteria_array(Country* arr, Country next, int index, char choice) {
     switch(choice) {
         case 'A':
@@ -28,7 +36,10 @@ bool country_criteria_array(Country* arr, Country next, int index, char choice) 
     }
 }
 
-
+/**
+ * Helper function for function that inserts a node into linked list
+ * checks if the head's data member is greater or equal to new node's data member
+*/
 bool customer_head_ptr_check(CustomerNode* head,CustomerNode* new_node, char choice) {
     switch(choice) {
         case 'A' :
@@ -42,6 +53,10 @@ bool customer_head_ptr_check(CustomerNode* head,CustomerNode* new_node, char cho
     }
 }
 
+/**
+ * Helper function for function that inserts a node into linked list
+ * checks if the current next ptr is less than new node's data member
+*/
 bool customer_curr_ptr_check(CustomerNode* curr,CustomerNode* new_node, char choice) {
     switch(choice) {
         case 'A' :
@@ -55,6 +70,10 @@ bool customer_curr_ptr_check(CustomerNode* curr,CustomerNode* new_node, char cho
     }
 }
 
+/**
+ * Helper function for function that inserts a node into linked list
+ * checks if the head's data member is greater or equal to new node's data member
+*/
 bool country_head_ptr_check(CountryNode*head, CountryNode* new_node, char choice) {
     switch(choice) {
         case 'A':
@@ -68,6 +87,10 @@ bool country_head_ptr_check(CountryNode*head, CountryNode* new_node, char choice
     }
 }
 
+/**
+ * Helper function for function that inserts a node into linked list
+ * checks if the current next ptr is less than new node's data member
+*/
 bool country_curr_ptr_check(CountryNode*curr, CountryNode* new_node, char choice) {
     switch(choice) {
         case 'A':
@@ -81,65 +104,90 @@ bool country_curr_ptr_check(CountryNode*curr, CountryNode* new_node, char choice
     }
 }
 
+/**
+ * Inserts a node into a sorted linked list
+*/
 void sorted_insert_customer(CustomerNode*& headref, CustomerNode* new_node, char choice) {
-    if (headref == nullptr || customer_head_ptr_check(headref,new_node,choice)) {
+    //If sorted list hasn't been created yet, newnode becomes new head of sorted list 
+    //or if the head has a greater value than the newnode, making the newnode the new head
+    if (headref == nullptr || customer_head_ptr_check(headref,new_node,choice)) { 
         new_node->next = headref;
         headref = new_node;
     }
     else {
         CustomerNode* current = headref;
+        //Current set to the headref and iterates to the end of sorted list and checks if 
+        //current->next is less than the newnode
         while (current->next != nullptr && customer_curr_ptr_check(current,new_node,choice)) {
             current = current->next;
         }
+        //Newnode becomes the end of the sorted list
         new_node->next = current->next;
+        //Previous end of list points to the new node
         current->next = new_node;
     }
 }
 
-void customer_sort_list(CustomerList& customer, char choice) {
-    CustomerNode* sorted = nullptr;
-    CustomerNode* curr = customer.first;
-    while (curr != nullptr) {
-        CustomerNode* next = curr->next;
-        sorted_insert_customer(sorted,curr,choice);
-        curr = next;
+/**
+ * MAIN INSERTION SORT FUNCTION FOR LISTS
+*/
+void customer_sort_list(CustomerList*& customer, char choice) {
+    CustomerNode* sorted = nullptr; //Sorted is the head for the sorted lists
+    CustomerNode* curr = customer->first; //Iterator starts at lists head ptr;
+    while (curr != nullptr) { //Iterates until end of list , essentially the unsorted list
+        CustomerNode* next = curr->next; //Saves position of next ptr of current
+        sorted_insert_customer(sorted,curr,choice); //PLugs in curr into function that inserts nodes into sorted list
+        curr = next; //Curr is now equal to its original next position
     }
-    customer.first = sorted;
+    customer->first = sorted; //Once list has been sorted, customer head ptr now said to sorted.
 }
 
+/**
+ * Inserts a node into a sorted linked list
+*/
 void sorted_insert_country(CountryNode *&headref, CountryNode* new_node, char choice) {
+    //If sorted list hasn't been created yet, newnode becomes new head of sorted list 
+    //or if the head has a greater value than the newnode, making the newnode the new head
     if (headref == nullptr || country_head_ptr_check(headref, new_node, choice)) {
         new_node->next = headref;
         headref = new_node;
     }
     else {
         CountryNode* current = headref;
+        //Current set to the headref and iterates to the end of sorted list and checks if 
+        //current->next is less than the newnode
         while (current->next != nullptr && country_curr_ptr_check(current,new_node,choice)) {
             current = current->next;
         }
+        //Newnode becomes the end of the sorted list
         new_node->next = current->next;
-        current->next = new_node;
+        //Previous end of list points to the new node
+        current->next = new_node; 
     }
 }
 
-void country_sort_list(CountryList& country, char choice) {
-    CountryNode* sorted = nullptr;
-    CountryNode* curr = country.first;
-    while (curr != nullptr) {
-        CountryNode* next = curr->next;
-        sorted_insert_country(sorted,curr,choice);
-        curr = next;
+void country_sort_list(CountryList*& country, char choice) {
+    CountryNode* sorted = nullptr; //Sorted is the head for the sorted lists
+    CountryNode* curr = country->first; //Iterator starts at lists head ptr;
+    while (curr != nullptr) { //Iterates until end of list , essentially the unsorted list
+        CountryNode* next = curr->next; //Saves position of next ptr of current
+        sorted_insert_country(sorted,curr,choice); //PLugs in curr into function that inserts nodes into sorted list
+        curr = next; //Curr is now equal to its original next position
     }
-    country.first = sorted;
-}
+    country->first = sorted; //Once list has been sorted, customer head ptr now said to sorted.
+} 
 
 
 
 
+/**
+ * Sorts array by basic insertion sort algorithm (yawn)
+ * citing zybooks
+*/
 void customer_sort_array(Customer* arr, int index, char choice) {
     for (int i = 1; i < index; i++) {
         Customer next = arr[i];
-        int j = i;
+        int j = i;       //Function that compares criteria
         while (j > 0 && customer_criteria_array(arr, next, j, choice)) {
             arr[j] = arr[j - 1];
             j--;
@@ -148,10 +196,14 @@ void customer_sort_array(Customer* arr, int index, char choice) {
     }
 }
 
+/**
+ * Sorts array by basic insertion sort algorithm (yawn)
+ * citing zybooks
+*/
 void country_sort_array(Country* arr, int index, char choice) {
     for (int i = 1; i < index; i++) {
         Country next = arr[i];
-        int j = i;
+        int j = i;       //Function that compares criteria
         while (j > 0 && country_criteria_array(arr, next, j, choice)) {
             arr[j] = arr[j - 1];
             j--;

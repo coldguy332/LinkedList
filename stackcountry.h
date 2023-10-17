@@ -1,3 +1,5 @@
+//Created by Amal Afsal for Linked List lab on 10/13/23.
+
 #ifndef STACKCOUNTRY_H
 #define STACKCOUNTRY_H
 

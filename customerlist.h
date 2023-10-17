@@ -1,3 +1,5 @@
+//Created by Amal Afsal for Linked List lab on 10/11/23.
+
 #ifndef CUSTOMERLIST_H
 #define CUSTOMERLIST_H
 

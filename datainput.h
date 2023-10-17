@@ -1,3 +1,5 @@
+//Created by Amal Afsal for Linked List lab on 10/11/23.
+
 #ifndef DATAINPUT_H
 #define DATAINPUT_H
 
@@ -15,14 +17,13 @@
 #include "queuecustomer.h"
 #include "queuecountry.h"
 
-void choosing_dataset();
 
-void datainput_customer();
-void array_list_fill_customer(std::ifstream& in_file, Customer *arr, int index, CustomerList& customer);
+void data_input_customer();
+void array_list_fill_customer(std::ifstream& in_file, Customer *arr, int index, CustomerList*& customer);
 
 
-void datainput_country();
-void array_list_fill_country(std::ifstream& in_file, Country* arr, int index, CountryList& customer);
+void data_input_country();
+void array_list_fill_country(std::ifstream& in_file, Country* arr, int index, CountryList*& customer);
 
 
 int line_counter(std::ifstream& in_file);

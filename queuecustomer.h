@@ -1,3 +1,5 @@
+//Created by Amal Afsal for Linked List lab on 10/13/23.
+
 #ifndef QUEUECUSTOMER_H
 #define QUEUECUSTOMER_H
 

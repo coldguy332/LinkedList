@@ -24,6 +24,9 @@ Country::Country(std::string country_name, long double emissions, long int popul
 	this->year = 0;
 }
 
+/**
+ * Constructor that will be primarily used for stacks/queues
+*/
 Country::Country(int year, std::string country_name, long double emissions) {
 	this->country_name = country_name;
 	this->emissions = emissions;
@@ -39,6 +42,9 @@ std::string Country::get_name() const {
 	return this->country_name;
 }
 
+/**
+ * returns emissions
+*/
 long double Country::get_emissions() const {
 	return this->emissions;
 }
@@ -55,6 +61,9 @@ int Country::get_area() const {
 	return this->area;
 }
 
+/**
+ * returns year of emissions report 
+**/
 int Country::get_year() const {
 	return this->year;
 }

@@ -1,5 +1,8 @@
 #include "customerlist.h"
 
+/**
+ * Pushes back customer object to customer list
+*/
 void CustomerList::push_back_customer(Customer data) {
     CustomerNode* newnode = new CustomerNode;
     newnode->data = data;
@@ -13,6 +16,10 @@ void CustomerList::push_back_customer(Customer data) {
     }
 }
 
+
+/**
+ * Deletes list
+*/
 void CustomerList::delete_list() {
     CustomerNode* current = this->first;
     while (current != nullptr) {

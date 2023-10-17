@@ -1,32 +1,42 @@
 #include "stackcountry.h"
 
+/**
+ * Stack default constructor
+*/
 StackCountry::StackCountry() {
     this->head = nullptr;
 }
 
+/**
+ * Pusshes objects in order
+ * ONLY DO THIS ONCE
+*/
 void StackCountry::push_in_order(Country data) {
-    CountryNode* newnode= new CountryNode;
-    newnode->data = data;
-    if(this->head == nullptr) {
+    CountryNode* newnode= new CountryNode; //creates a new node
+    newnode->data = data; //new node takes in data
+    if(this->head == nullptr) { //if head is null, new node becomes head
         this->head = newnode;
     }
     else {
-        if (newnode->data.get_year() > head->data.get_year()) {
+        if (newnode->data.get_year() > head->data.get_year()) { //if newnode is greater than head, newnode becomes new head
             newnode->next = head;
             head = newnode;
         }
         else {
-            CountryNode* trav = head;
+            CountryNode* trav = head; //ptr to head traverses until it's value is greater than newnode
             while (trav->next != nullptr && trav->next->data.get_year() > newnode->data.get_year()) {
                 trav = trav->next;
             }
             CountryNode* temp = trav->next;
-            trav->next = newnode;
-            newnode->next = temp;
+            trav->next = newnode; //trav points to newnode
+            newnode->next = temp; //newnode points to trav->next
         }
     }
 }
 
+/**
+ * Pushing one object to stack
+*/
 void StackCountry::push(Country data) {
     CountryNode* newnode = new CountryNode;
     newnode->data = data;
@@ -39,6 +49,9 @@ void StackCountry::push(Country data) {
     }
 }
 
+/**
+ * Removes one object from stack
+*/
 void StackCountry::pop() {
     if (head != nullptr) {
         CountryNode* to_delete = head;
@@ -51,6 +64,9 @@ void StackCountry::pop() {
     }
 }
 
+/**
+ * Prints stack node information
+*/
 void StackCountry::print() {
     CountryNode* trav = this->head;
     while (trav->next != nullptr) {
@@ -64,6 +80,9 @@ void StackCountry::print() {
     std::cout << std::endl;
 }
 
+/**
+ * Deletes nodes in stack
+*/
 void StackCountry::delete_stack() {
     CountryNode* current = this->head;
     while (current != nullptr) {
@@ -74,6 +93,9 @@ void StackCountry::delete_stack() {
     this->head = nullptr;
 }
 
+/**
+ * Outputs data to csv file
+*/
 void StackCountry::offload_data(std::ofstream& off) {
     off.open("save.csv");
     off << "Country" << "," << "Year" << "," << "Emissions" << std::endl;
