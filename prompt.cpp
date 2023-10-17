@@ -94,27 +94,125 @@ void choose_specific_queue() {
 }
 
 void customer_stack_interaction(StackCustomer*& customer) {
+	char choice;
+	std::string temp_first_name ,temp_last_name, temp_date;
 	bool persist = true;
 	while (persist) {
-
+		customer->print();
+		std::cout << "Remove or add element (A/B): " ;
+		if (choice == 'A' || choice == 'a') {
+			customer->pop();
+			customer->print();
+		}
+		else if (choice == 'B' || choice == 'b') {
+			std::cout << std::endl << "Enter First Name:";
+			std::cin >> temp_first_name;
+			std::cout << std::endl << "Enter Lirst Name:";
+			std::cin >> temp_last_name;
+			std::cout << std::endl << "Enter Date of when customer first bought from us (mm/dd/yyyy): "; 
+			std::cin >> temp_date;
+			customer->push(Customer(temp_first_name,temp_last_name,temp_date));
+			customer->print();
+		}
+		std::cout << "Continue modifying stack? (Y/n):";
+		std::cin >> choice;
+		if (choice == 'Y' || choice == 'y') {
+			continue;
+		}
+		if (choice == 'N' || choice == 'n') {
+			persist = false;
+		}
 	}
 }
 void country_stack_interaction(StackCountry*& country) {
+	char choice;
+	std::string temp_country_name, temp_year, temp_emissions;
 	bool persist = true;
 	while (persist) {
-		
+		std::cout << "Remove or add element (A/B): " ;
+		if (choice == 'A' || choice == 'a') {
+			country->pop();
+			country->print();
+		}
+		else if (choice == 'B' || choice == 'b') {
+			std::cout << std::endl << "Enter Country Name:";
+			std::cin >> temp_country_name;
+			std::cout << std::endl << "Enter Year as of today:";
+			std::cin >> temp_year;
+			std::cout << std::endl << "Enter emissions of country: "; 
+			std::cin >> temp_emissions;
+			country->push(Country(stoi(temp_year),temp_country_name,stold(temp_emissions)));
+			country->print();
+		}
+		std::cout << "Continue modifying stack? (Y/n):";
+		std::cin >> choice;
+		if (choice == 'Y' || choice == 'y') {
+			continue;
+		}
+		if (choice == 'N' || choice == 'n') {
+			persist = false;
+		}
 	}
 }
 
 void customer_queue_interaction(QueueCustomer*& customer) {
+	char choice;
+	std::string temp_first_name ,temp_last_name, temp_total_sales;
 	bool persist = true;
 	while (persist) {
-		
+		customer->print();
+		std::cout << "Remove or add element (A/B): " ;
+		if (choice == 'A' || choice == 'a') {
+			customer->pop_front();
+			customer->print();
+		}
+		else if (choice == 'B' || choice == 'b') {
+			std::cout << std::endl << "Enter First Name:";
+			std::cin >> temp_first_name;
+			std::cout << std::endl << "Enter Lirst Name:";
+			std::cin >> temp_last_name;
+			std::cout << std::endl << "Enter Total Sales (must be less than previous): "; 
+			std::cin >> temp_total_sales;
+			customer->push_back(Customer(temp_first_name,temp_last_name,temp_total_sales));
+			customer->print();
+		}
+		std::cout << "Continue modifying stack? (Y/n):";
+		std::cin >> choice;
+		if (choice == 'Y' || choice == 'y') {
+			continue;
+		}
+		if (choice == 'N' || choice == 'n') {
+			persist = false;
+		}
 	}
 }
 void country_queue_interaction(QueueCountry*& country) {
+	char choice;
+	std::string temp_country_name, temp_year, temp_emissions;
 	bool persist = true;
 	while (persist) {
-		
+		std::cout << "Remove or add element (A/B): " ;
+		if (choice == 'A' || choice == 'a') {
+			country->pop_front();
+			country->print();
+		}
+		else if (choice == 'B' || choice == 'b') {
+			std::cout << std::endl << "Enter Country Name:";
+			std::cin >> temp_country_name;
+			std::cout << std::endl << "Enter Year as of today:";
+			std::cin >> temp_year;
+			std::cout << std::endl << "Enter emissions of country: "; 
+			std::cin >> temp_emissions;
+			country->push_back(Country(stoi(temp_year),temp_country_name,stold(temp_emissions)));
+			country->print();
+		}
+		std::cout << "Continue modifying stack? (Y/n):";
+		std::cin >> choice;
+		if (choice == 'Y' || choice == 'y') {
+			continue;
+		}
+		if (choice == 'N' || choice == 'n') {
+			persist = false;
+		}
 	}
 }
