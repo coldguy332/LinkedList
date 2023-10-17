@@ -69,3 +69,14 @@ void QueueCustomer::print() {
               << this->tail->data.get_total_sales() << std::endl;
     std::cout << std::endl;
 }
+
+void QueueCustomer::delete_queue() {
+    CustomerNode* current = this->head;
+    while (current != nullptr) {
+        CustomerNode* del = current;
+        current = current->next;
+        delete del;
+    }
+    this->head = nullptr;
+    this->tail = nullptr;
+}

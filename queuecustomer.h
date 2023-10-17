@@ -17,6 +17,8 @@ struct QueueCustomer {
 
     void print();
 
+    void delete_queue();
+
     CustomerNode* head;
     CustomerNode* tail;
 };

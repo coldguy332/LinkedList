@@ -19,6 +19,8 @@ struct StackCountry {
 
     void print();
 
+    void delete_stack();
+
     CountryNode* head;
 
 };

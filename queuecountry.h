@@ -16,6 +16,8 @@ struct QueueCountry {
   void pop_front();
   void print();
 
+  void delete_queue();
+
   CountryNode* head;
   CountryNode* tail;  
 };

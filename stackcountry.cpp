@@ -63,3 +63,13 @@ void StackCountry::print() {
               << std::setw(30) << std::right << trav->data.get_emissions() << std::endl;
     std::cout << std::endl;
 }
+
+void StackCountry::delete_stack() {
+    CountryNode* current = this->head;
+    while (current != nullptr) {
+        CountryNode* del = current;
+        current = current->next;
+        delete del;
+    }
+    this->head = nullptr;
+}

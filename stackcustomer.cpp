@@ -66,3 +66,13 @@ void StackCustomer::print() {
               << trav->data.get_customer_since() << std::endl;
     std::cout << std::endl;
 }
+
+void StackCustomer::delete_stack() {
+    CustomerNode* current = this->head;
+    while (current != nullptr) {
+        CustomerNode* del = current;
+        current = current->next;
+        delete del;
+    }
+    this->head = nullptr;
+}

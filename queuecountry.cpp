@@ -68,3 +68,14 @@ void QueueCountry::print() {
     std::cout << std::setw(20) << std::right << this->tail->data.get_emissions() << std::endl;
     std::cout << std::endl;
 }
+
+void QueueCountry::delete_queue() {
+    CountryNode* current = this->head;
+    while (current != nullptr) {
+        CountryNode* del = current;
+        current = current->next;
+        delete del;
+    }
+    this->head = nullptr;
+    this->tail = nullptr;
+}

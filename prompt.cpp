@@ -237,8 +237,74 @@ void country_queue_interaction(QueueCountry*& country) {
 	}
 }
 
-void save_stack_queue() {
+void save_stack_customer() {
 	char choice;
 	std::cout << std::endl;
-	std::cout << "Would you like to save your stack/queue? (Y/n):";
+	std::cout << "Would you like to save your stack (Y/n):";
+	if (choice == 'Y' || choice == 'y') {
+
+	}
+	std::cout << std::endl;
+	std::cout << "Would you like to re-run the program? (Y/n):";
+	std::cin >> choice;
+	if (choice == 'Y' || choice == 'y') {
+		welcome_prompt();
+	}
+	else if (choice == 'N' || choice == 'n') {
+		exit(0);
+	}
+}
+
+void save_stack_country() {
+	char choice;
+	std::cout << std::endl;
+	std::cout << "Would you like to save your stack (Y/n):";
+	if (choice == 'Y' || choice == 'y') {
+
+	}
+	std::cout << std::endl;
+	std::cout << "Would you like to re-run the program? (Y/n):";
+	std::cin >> choice;
+	if (choice == 'Y' || choice == 'y') {
+		welcome_prompt();
+	}
+	else if (choice == 'N' || choice == 'n') {
+		exit(0);
+	}
+}
+
+void save_queue_customer() {
+	char choice;
+	std::cout << std::endl;
+	std::cout << "Would you like to save your stack (Y/n):";
+	if (choice == 'Y' || choice == 'y') {
+
+	}
+	std::cout << std::endl;
+	std::cout << "Would you like to re-run the program? (Y/n):";
+	std::cin >> choice;
+	if (choice == 'Y' || choice == 'y') {
+		welcome_prompt();
+	}
+	else if (choice == 'N' || choice == 'n') {
+		exit(0);
+	}
+}
+
+void save_country_customer() {
+	char choice;
+	std::cout << std::endl;
+	std::cout << "Would you like to save your stack (Y/n):";
+	if (choice == 'Y' || choice == 'y') {
+
+	}
+	std::cout << std::endl;
+	std::cout << "Would you like to re-run the program? (Y/n):";
+	std::cin >> choice;
+	if (choice == 'Y' || choice == 'y') {
+		welcome_prompt();
+	}
+	else if (choice == 'N' || choice == 'n') {
+		exit(0);
+	}
 }

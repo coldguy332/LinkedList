@@ -18,6 +18,8 @@ struct StackCustomer {
     void pop();
     void print();
 
+    void delete_stack();
+
     CustomerNode* head;
 };
 
