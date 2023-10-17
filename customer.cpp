@@ -18,13 +18,21 @@ Customer::Customer(std::string first_name, std::string last_name, int household_
     this->customer_since = "";
 }
 
-Customer::Customer(std::string first_name, std::string last_name, std::string customer_since) {
+Customer::Customer(std::string first_name, std::string last_name, std::string customer_since) { //Stack
     this->first_name = first_name;
     this->last_name = last_name;
     this->household_income = 0;
     this->credit_score = 0;
     this->total_sales = 0.0;
     this->customer_since = customer_since;
+}
+Customer::Customer(std::string first_name, std::string last_name, double total_sales) { //Queue
+    this->first_name = first_name;
+    this->last_name = last_name;
+    this->household_income = 0;
+    this->credit_score = 0;
+    this->total_sales = total_sales;
+    this->customer_since = "";
 }
 
 std::string Customer::get_first_name() const {

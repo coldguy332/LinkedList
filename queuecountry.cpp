@@ -14,8 +14,8 @@ void QueueCountry::push_back_in_order(Country data) {
     }
     else {
         CountryNode* trav = head;
-        while (trav->next != nullptr && trav->next->data.get_emissions() > newnode->data.get_emissions()
-               && trav->next->data.get_year() >= newnode->data.get_year()) {
+        while (trav->next != nullptr && trav->next->data.get_emissions() < newnode->data.get_emissions()
+               && trav->next->data.get_year() <= newnode->data.get_year()) {
             trav = trav->next;
         }
         CountryNode* temp = trav->next;

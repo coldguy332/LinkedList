@@ -10,6 +10,7 @@ class Customer {
         Customer();
         Customer(std::string first_name, std::string last_name, int household_income, int credit_score, double total_sales);
         Customer(std::string first_name, std::string last_name, std::string customer_since);
+        Customer(std::string first_name, std::string last_name, double total_sales);
 
         //Getters are first+last name, household_income,credit_score, total sales
         //We tryna chase that bread$$$$$$$

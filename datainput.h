@@ -12,8 +12,8 @@
 #include "country.h"
 #include "stackcountry.h"
 #include "stackcustomer.h"
-#include "stackcustomer.h"
-#include "stackcustomer.h"
+#include "queuecustomer.h"
+#include "queuecountry.h"
 
 void choosing_dataset();
 
@@ -35,5 +35,7 @@ void stack_fill_customer(StackCustomer*& customer, std::ifstream& in_file);
 void stack_fill_country(StackCountry*& country, std::ifstream& in_file);
 
 void queue_fill(char choice);
+void queue_fill_customer(QueueCustomer*& customer, std::ifstream& in_file);
+void queue_fill_country(QueueCountry*& country, std::ifstream& in_file);
 
 #endif

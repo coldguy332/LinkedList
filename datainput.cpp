@@ -280,3 +280,99 @@ void stack_fill_country(StackCountry*& country, std::ifstream& in_file) {
 	
     in_file.close(); //Closes file
 }
+
+void queue_fill(char choice) {
+    if (choice == 'A') {
+        QueueCustomer* customer = new QueueCustomer;
+        std::ifstream in_file;
+        in_file.open("customer.csv");
+        queue_fill_customer(customer, in_file);
+    }
+    if (choice == 'B') {
+        QueueCountry* country = new QueueCountry;
+        std::ifstream in_file;
+        in_file.open("country.csv");
+        queue_fill_country(country, in_file);
+    }
+}
+
+
+void queue_fill_customer(QueueCustomer*& customer, std::ifstream& in_file) {
+    std::string temp_line, temp_data;
+
+    std::string temp_first_name;
+    std::string temp_last_name;
+    std::string temp_total_sales;
+
+    int index = line_counter(in_file);
+
+    getline(in_file,temp_line); 
+
+    for (int i = 0; i < index; i++) {
+        getline(in_file,temp_line);
+        std::stringstream ss;
+        ss.str(temp_line);
+
+        getline(ss, temp_data, ',');
+        getline(ss, temp_data, ',');
+
+        getline(ss, temp_first_name, ',');
+        getline(ss, temp_last_name, ',');
+
+        getline(ss, temp_data, ',');
+        getline(ss, temp_data, ',');
+        getline(ss, temp_data, ',');
+        getline(ss, temp_data, ',');
+        getline(ss, temp_data, ',');
+        getline(ss, temp_data, ',');
+        quoted_field(ss,temp_data); 
+        getline(ss, temp_data, ',');
+        getline(ss, temp_data, ',');
+        getline(ss, temp_data, ',');
+        getline(ss, temp_data, ',');
+
+        getline(ss, temp_data, ',');
+        getline(ss, temp_data, ',');
+        getline(ss, temp_total_sales);
+
+        customer->push_back_in_order(Customer(temp_first_name,temp_last_name,stod(temp_total_sales)));
+
+    }
+    in_file.clear(); //Resets error flags on a stream such as EOF
+	in_file.seekg(0);//sets position of next character to be read back to beginning of file
+	
+    in_file.close(); //Closes file
+}
+void queue_fill_country(QueueCountry*& country, std::ifstream& in_file) {
+    std::string temp_line, temp_data;
+    std::string temp_year;
+    std::string temp_country_name;
+    std::string temp_emissions;
+
+    int index = line_counter(in_file);
+
+    getline(in_file,temp_line); 
+
+    for (int i = 0; i < index; i++) {
+        getline(in_file,temp_line);
+        std::stringstream ss;
+        ss.str(temp_line);
+
+        getline(ss, temp_country_name, ',');
+        getline(ss, temp_data, ',');
+        quoted_field(ss, temp_data);
+        getline(ss, temp_year, ',');
+        getline(ss, temp_emissions, ',');
+        getline(ss, temp_data, ',');
+        getline(ss, temp_data, ',');
+        getline(ss, temp_data, ',');
+        getline(ss, temp_data);
+        density_check(temp_data);
+
+        country->push_back_in_order(Country(stoi(temp_year),temp_country_name,stold(temp_emissions)));
+    }
+    in_file.clear(); //Resets error flags on a stream such as EOF
+	in_file.seekg(0);//sets position of next character to be read back to beginning of file
+	
+    in_file.close(); //Closes file
+}
