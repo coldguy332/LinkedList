@@ -6,6 +6,7 @@
 #include "country.h"
 #include "countrynode.h"
 
+//rank emissions and fine countries >:)
 struct QueueCountry {
 
   QueueCountry();
