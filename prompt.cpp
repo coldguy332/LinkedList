@@ -70,6 +70,13 @@ void choose_stack_or_queue() {
 	std::cout << "In this program, we are giving you the option to experience utilizing a stack or queue." << std::endl;
 	std::cout << "Would you like to use" << std::endl << "A) Stack" << std::endl << "B) Queue" << std::endl;
 	std::cin >> choice;
+	if (choice == 'A' || choice == 'a') {
+		choose_specific_stack();
+	}
+	if (choice == 'B' || choice == 'b') {
+		choose_specific_queue();
+	}
+
 }
 
 void choose_specific_stack() {
@@ -81,6 +88,7 @@ void choose_specific_stack() {
 			  << " most recent listing" << std::endl;
 	std::cout << "Please pick one: " ;
 	std::cin >> choice;
+	stack_fill(choice);
 } 
 
 void choose_specific_queue() {
@@ -93,6 +101,7 @@ void choose_specific_queue() {
 			  << " , older emission reports can be purged. Employee has the ability to delete old emissions reports while adding new ones" << std::endl;
 	std::cout << "Please pick one: " ;
 	std::cin >> choice;
+	queue_fill(choice);
 }
 
 void customer_stack_interaction(StackCustomer*& customer) {
@@ -102,6 +111,7 @@ void customer_stack_interaction(StackCustomer*& customer) {
 	while (persist) {
 		customer->print();
 		std::cout << "Remove or add element (A/B): " ;
+		std::cin >> choice;
 		if (choice == 'A' || choice == 'a') {
 			customer->pop();
 			customer->print();
@@ -131,7 +141,9 @@ void country_stack_interaction(StackCountry*& country) {
 	std::string temp_country_name, temp_year, temp_emissions;
 	bool persist = true;
 	while (persist) {
+		country->print();
 		std::cout << "Remove or add element (A/B): " ;
+		std::cin >> choice;
 		if (choice == 'A' || choice == 'a') {
 			country->pop();
 			country->print();
@@ -164,6 +176,7 @@ void customer_queue_interaction(QueueCustomer*& customer) {
 	while (persist) {
 		customer->print();
 		std::cout << "Remove or add element (A/B): " ;
+		std::cin >> choice;
 		if (choice == 'A' || choice == 'a') {
 			customer->pop_front();
 			customer->print();
@@ -193,7 +206,9 @@ void country_queue_interaction(QueueCountry*& country) {
 	std::string temp_country_name, temp_year, temp_emissions;
 	bool persist = true;
 	while (persist) {
+		country->print();
 		std::cout << "Remove or add element (A/B): " ;
+		std::cin >> choice;
 		if (choice == 'A' || choice == 'a') {
 			country->pop_front();
 			country->print();

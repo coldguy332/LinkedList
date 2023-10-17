@@ -12,7 +12,7 @@ void StackCountry::push_in_order(Country data) {
     }
     else {
         CountryNode* trav = head;
-        while (trav->next != nullptr && trav->next->data.get_year() < newnode->data.get_year()) {
+        while (trav->next != nullptr && trav->next->data.get_year() > newnode->data.get_year()) {
             trav = trav->next;
         }
         CountryNode* temp = trav->next;
@@ -51,9 +51,9 @@ void StackCountry::print() {
         trav = trav->next;
     }
     std::cout << std::endl;
-    std::cout << "Current head: " << this->head->data.get_name() << std::setw(10) << std::left << this->head->data.get_year() 
-              << std::setw(10) << std::left << this->head->data.get_emissions() << std::endl;
-    std::cout << "Tail: " << trav->data.get_name() << std::setw(10) << std::left << trav->data.get_year() 
-              << std::setw(10) << std::left << trav->data.get_emissions() << std::endl;
+    std::cout << "Current head: " << this->head->data.get_name() << std::setw(30) << std::right << this->head->data.get_year() 
+              << std::setw(30) << std::right << this->head->data.get_emissions() << std::endl;
+    std::cout << "        Tail: " << trav->data.get_name() << std::setw(30) << std::right << trav->data.get_year() 
+              << std::setw(30) << std::right << trav->data.get_emissions() << std::endl;
     std::cout << std::endl;
 }

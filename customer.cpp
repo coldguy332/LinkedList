@@ -51,6 +51,10 @@ double Customer::get_total_sales() const{
     return this->total_sales;
 }
 
+std::string Customer::get_customer_since() const {
+    return this->customer_since;
+}
+
 int Customer::get_serialized_date() const {
     std::stringstream ss;
     std::string temp_month;
@@ -66,11 +70,11 @@ int Customer::get_serialized_date() const {
     getline(ss, temp_year);
 
     month = stoi(temp_month) * 100;
-    day = stoi(temp_day) * 10;
-    year = stoi(temp_year) * 1000;
+    day = stoi(temp_day) ;
+    year = stoi(temp_year) * 10000;
     serial_result = year + month + day;
 
     return serial_result;
-
+    
 }
 

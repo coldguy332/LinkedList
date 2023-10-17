@@ -13,7 +13,7 @@ void StackCustomer::push_in_order(Customer data) {
     }
     else {
         CustomerNode* trav = head;
-        while (trav->next != nullptr && trav->next->data.get_serialized_date() < newnode->data.get_serialized_date()) {
+        while (trav->next != nullptr && trav->next->data.get_serialized_date() > newnode->data.get_serialized_date()) {
             trav = trav->next;
         }
         CustomerNode* temp = trav->next;
@@ -54,9 +54,9 @@ void StackCustomer::print() {
         trav = trav->next;
     }
     std::cout << std::endl;
-    std::cout << "Current head: " << this->head->data.get_first_name() + " " + this->head->data.get_last_name() << std::setw(10) << std::left 
-              << this->head->data.get_serialized_date() << std::endl;
-    std::cout << "Tail: " << trav->data.get_first_name() + " " + trav->data.get_last_name() << std::setw(10) << std::left 
-              << trav->data.get_serialized_date() << std::endl;
+    std::cout << "Current head: " << this->head->data.get_first_name() + " " + this->head->data.get_last_name() << std::setw(30) << std::right 
+              << this->head->data.get_customer_since() << std::endl;
+    std::cout << "        Tail: " << trav->data.get_first_name() + " " + trav->data.get_last_name() << std::setw(30) << std::right 
+              << trav->data.get_customer_since() << std::endl;
     std::cout << std::endl;
 }

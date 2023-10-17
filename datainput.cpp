@@ -2,6 +2,8 @@
 
 
 void data_input_customer() {
+    choose_stack_or_queue();
+    /*
     std::ifstream in_file;
     in_file.open("customer.csv");
     int index = line_counter(in_file);
@@ -11,7 +13,7 @@ void data_input_customer() {
 
     array_list_fill_customer(in_file, arr, index, customer);
     choose_criteria_customer(arr,customer,index);
-
+    */
 }
 
 void data_input_country() {
@@ -190,14 +192,16 @@ void stack_fill(char choice) {
     if (choice == 'A') {
         StackCustomer* customer = new StackCustomer;
         std::ifstream in_file;
-        in_file.open("customer.csv");
+        in_file.open("customersmall.csv");
         stack_fill_customer(customer, in_file);
+        customer_stack_interaction(customer);
     }
     if (choice == 'B') {
         StackCountry* country = new StackCountry;
         std::ifstream in_file;
-        in_file.open("country.csv");
+        in_file.open("smallfile.csv");
         stack_fill_country(country, in_file);
+        country_stack_interaction(country);
     }
 }
 
@@ -285,14 +289,16 @@ void queue_fill(char choice) {
     if (choice == 'A') {
         QueueCustomer* customer = new QueueCustomer;
         std::ifstream in_file;
-        in_file.open("customer.csv");
+        in_file.open("customersmall.csv");
         queue_fill_customer(customer, in_file);
+        customer_queue_interaction(customer);
     }
     if (choice == 'B') {
         QueueCountry* country = new QueueCountry;
         std::ifstream in_file;
-        in_file.open("country.csv");
+        in_file.open("smallfile.csv");
         queue_fill_country(country, in_file);
+        country_queue_interaction(country);
     }
 }
 
