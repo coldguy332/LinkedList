@@ -48,3 +48,12 @@ void QueueCountry::pop_front() {
         std::cout << "Queue is empty." << std::endl;
     }
 }
+
+void QueueCountry::print() {
+    std::cout << std::endl;
+    std::cout << "Current head: " << this->head->data.get_name() << std::setw(10) << std::left << this->head->data.get_year() 
+              << std::setw(10) << std::left << this->head->data.get_emissions() << std::endl;
+    std::cout << "Tail: " << this->tail->data.get_name() << std::setw(10) << std::left << this->tail->data.get_year() 
+              << std::setw(10) << std::left << this->tail->data.get_emissions() << std::endl;
+    std::cout << std::endl;
+}

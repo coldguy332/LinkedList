@@ -2,6 +2,7 @@
 #define STACKCOUNTRY_H
 
 #include <iostream>
+#include <iomanip>
 
 #include "country.h"
 #include "countrynode.h"
@@ -15,6 +16,8 @@ struct StackCountry {
 
     void push(Country data);
     void pop();
+
+    void print();
 
     CountryNode* head;
 

@@ -2,6 +2,7 @@
 #define QUEUECUSTOMER_H
 
 #include <iostream>
+#include <iomanip>
 
 #include "customer.h"
 #include "customernode.h"
@@ -13,6 +14,8 @@ struct QueueCustomer {
     void push_back_in_order(Customer data);
     void push_back(Customer data);
     void pop_front();
+
+    void print();
 
     CustomerNode* head;
     CustomerNode* tail;

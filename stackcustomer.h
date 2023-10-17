@@ -2,6 +2,7 @@
 #define STACKCUSTOMER_H
 
 #include <iostream>
+#include <iomanip>
 
 #include "customer.h"
 #include "customernode.h"
@@ -15,6 +16,8 @@ struct StackCustomer {
 
     void push(Customer data);
     void pop();
+    void print();
+
     CustomerNode* head;
 };
 

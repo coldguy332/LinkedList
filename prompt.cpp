@@ -92,3 +92,29 @@ void choose_specific_queue() {
 	std::cout << "Please pick one: " ;
 	std::cin >> choice;
 }
+
+void customer_stack_interaction(StackCustomer*& customer) {
+	bool persist = true;
+	while (persist) {
+
+	}
+}
+void country_stack_interaction(StackCountry*& country) {
+	bool persist = true;
+	while (persist) {
+		
+	}
+}
+
+void customer_queue_interaction(QueueCustomer*& customer) {
+	bool persist = true;
+	while (persist) {
+		
+	}
+}
+void country_queue_interaction(QueueCountry*& country) {
+	bool persist = true;
+	while (persist) {
+		
+	}
+}

@@ -46,3 +46,12 @@ void QueueCustomer::pop_front() {
         std::cout << "Queue is empty." << std::endl;
     }
 }
+
+void QueueCustomer::print() {
+    std::cout << std::endl;
+    std::cout << "Current head: " << this->head->data.get_first_name() + " " + this->head->data.get_last_name() << std::setw(10) << std::left 
+              << this->head->data.get_total_sales() << std::endl;
+    std::cout << "Tail: " << this->tail->data.get_first_name() + " " + this->tail->data.get_last_name() << std::setw(10) << std::left 
+              << this->tail->data.get_serialized_date() << std::endl;
+    std::cout << std::endl;
+}

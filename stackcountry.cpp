@@ -44,3 +44,16 @@ void StackCountry::pop() {
         std::cout << "Stack is empty." << std::endl;
     }
 }
+
+void StackCountry::print() {
+    CountryNode* trav = this->head;
+    while (trav->next != nullptr) {
+        trav = trav->next;
+    }
+    std::cout << std::endl;
+    std::cout << "Current head: " << this->head->data.get_name() << std::setw(10) << std::left << this->head->data.get_year() 
+              << std::setw(10) << std::left << this->head->data.get_emissions() << std::endl;
+    std::cout << "Tail: " << trav->data.get_name() << std::setw(10) << std::left << trav->data.get_year() 
+              << std::setw(10) << std::left << trav->data.get_emissions() << std::endl;
+    std::cout << std::endl;
+}
