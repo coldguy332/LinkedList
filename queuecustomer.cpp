@@ -7,23 +7,37 @@ QueueCustomer::QueueCustomer() {
 
 void QueueCustomer::push_back_in_order(Customer data) {
     CustomerNode* newnode = new CustomerNode;
+    newnode->data = data;
     if (this->head == nullptr) {
         this->head = newnode;
         this->tail = newnode;
     }
     else {
-        CustomerNode* trav = head;
-        while (trav->next != nullptr && trav->next->data.get_total_sales() > newnode->data.get_total_sales()) {
-            trav = trav->next;
+        if (newnode->data.get_total_sales() > head->data.get_total_sales()) {
+            newnode->next = head;
+            head = newnode;
         }
-        CustomerNode* temp = trav->next;
-        trav->next = newnode;
-        newnode->next = temp;
+        else {
+            CustomerNode* trav = head;
+            while (trav->next != nullptr && trav->next->data.get_total_sales() > newnode->data.get_total_sales()) {
+                trav = trav->next;
+            }
+            if (trav == tail) {
+                tail->next = newnode;
+                tail = newnode;
+            }
+            else {
+                CustomerNode* temp = trav->next;
+                trav->next = newnode;
+                newnode->next = temp;
+            }
+        }
     }
 }
 
 void QueueCustomer::push_back(Customer data) {
     CustomerNode* newnode = new CustomerNode;
+    newnode->data = data;
     newnode->data = data;
     if (tail == nullptr) {
         head = newnode;
@@ -49,9 +63,9 @@ void QueueCustomer::pop_front() {
 
 void QueueCustomer::print() {
     std::cout << std::endl;
-    std::cout << "Current head: " << this->head->data.get_first_name() + " " + this->head->data.get_last_name() << std::setw(10) << std::left 
+    std::cout << "Current head: " << this->head->data.get_first_name() + " " + this->head->data.get_last_name() << std::setw(10) << std::right 
               << this->head->data.get_total_sales() << std::endl;
-    std::cout << "Tail: " << this->tail->data.get_first_name() + " " + this->tail->data.get_last_name() << std::setw(10) << std::left 
-              << this->tail->data.get_serialized_date() << std::endl;
+    std::cout << "        Tail: " << this->tail->data.get_first_name() + " " + this->tail->data.get_last_name() << std::setw(10) << std::right
+              << this->tail->data.get_total_sales() << std::endl;
     std::cout << std::endl;
 }

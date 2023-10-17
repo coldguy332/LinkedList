@@ -12,13 +12,19 @@ void StackCustomer::push_in_order(Customer data) {
         this->head = newnode;
     }
     else {
-        CustomerNode* trav = head;
-        while (trav->next != nullptr && trav->next->data.get_serialized_date() > newnode->data.get_serialized_date()) {
-            trav = trav->next;
+        if (newnode->data.get_serialized_date() > head->data.get_serialized_date()) {
+            newnode->next = head;
+            head = newnode;;
         }
-        CustomerNode* temp = trav->next;
-        trav->next = newnode;
-        newnode->next = temp;
+        else {
+            CustomerNode* trav = head;
+            while (trav->next != nullptr && trav->next->data.get_serialized_date() > newnode->data.get_serialized_date()) {
+                trav = trav->next;
+            }
+            CustomerNode* temp = trav->next;
+            trav->next = newnode;
+            newnode->next = temp;
+        } 
     }
 }
 

@@ -291,6 +291,7 @@ void queue_fill(char choice) {
         std::ifstream in_file;
         in_file.open("customersmall.csv");
         queue_fill_customer(customer, in_file);
+        CustomerNode* trav = customer->head;
         customer_queue_interaction(customer);
     }
     if (choice == 'B') {
@@ -298,6 +299,12 @@ void queue_fill(char choice) {
         std::ifstream in_file;
         in_file.open("smallfile.csv");
         queue_fill_country(country, in_file);
+        CountryNode* trav = country->head; {
+            while (trav != nullptr) {
+                std::cout << trav->data.get_year() << std::endl;
+                trav = trav->next;
+            }
+        }
         country_queue_interaction(country);
     }
 }

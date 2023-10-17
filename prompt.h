@@ -28,4 +28,6 @@ void country_stack_interaction(StackCountry*& country);
 void customer_queue_interaction(QueueCustomer*& customer);
 void country_queue_interaction(QueueCountry*& country);
 
+void save_stack_queue();
+
 #endif

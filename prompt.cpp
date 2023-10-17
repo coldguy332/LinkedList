@@ -173,8 +173,11 @@ void customer_queue_interaction(QueueCustomer*& customer) {
 	char choice;
 	std::string temp_first_name ,temp_last_name, temp_total_sales;
 	bool persist = true;
+	std::cout << "test" << std::endl;
 	while (persist) {
+		std::cout << "test" << std::endl;
 		customer->print();
+		std::cout << "test" << std::endl;
 		std::cout << "Remove or add element (A/B): " ;
 		std::cin >> choice;
 		if (choice == 'A' || choice == 'a') {
@@ -188,7 +191,7 @@ void customer_queue_interaction(QueueCustomer*& customer) {
 			std::cin >> temp_last_name;
 			std::cout << std::endl << "Enter Total Sales (must be less than previous): "; 
 			std::cin >> temp_total_sales;
-			customer->push_back(Customer(temp_first_name,temp_last_name,temp_total_sales));
+			customer->push_back(Customer(temp_first_name,temp_last_name,stod(temp_total_sales)));
 			customer->print();
 		}
 		std::cout << "Continue modifying stack? (Y/n):";
@@ -232,4 +235,10 @@ void country_queue_interaction(QueueCountry*& country) {
 			persist = false;
 		}
 	}
+}
+
+void save_stack_queue() {
+	char choice;
+	std::cout << std::endl;
+	std::cout << "Would you like to save your stack/queue? (Y/n):";
 }

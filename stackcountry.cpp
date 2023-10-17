@@ -11,13 +11,19 @@ void StackCountry::push_in_order(Country data) {
         this->head = newnode;
     }
     else {
-        CountryNode* trav = head;
-        while (trav->next != nullptr && trav->next->data.get_year() > newnode->data.get_year()) {
-            trav = trav->next;
+        if (newnode->data.get_year() > head->data.get_year()) {
+            newnode->next = head;
+            head = newnode;
         }
-        CountryNode* temp = trav->next;
-        trav->next = newnode;
-        newnode->next = temp;
+        else {
+            CountryNode* trav = head;
+            while (trav->next != nullptr && trav->next->data.get_year() > newnode->data.get_year()) {
+                trav = trav->next;
+            }
+            CountryNode* temp = trav->next;
+            trav->next = newnode;
+            newnode->next = temp;
+        }
     }
 }
 

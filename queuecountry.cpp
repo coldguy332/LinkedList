@@ -13,14 +13,25 @@ void QueueCountry::push_back_in_order(Country data) {
         this->tail = newnode;
     }
     else {
-        CountryNode* trav = head;
-        while (trav->next != nullptr && trav->next->data.get_emissions() < newnode->data.get_emissions()
-               && trav->next->data.get_year() <= newnode->data.get_year()) {
-            trav = trav->next;
+        if (newnode->data.get_year() < head->data.get_year()) {
+            newnode->next = head;
+            head = newnode;
         }
-        CountryNode* temp = trav->next;
-        trav->next = newnode;
-        newnode->next = temp;
+        else {
+            CountryNode* trav = head;
+            while (trav->next != nullptr && trav->next->data.get_year() < newnode->data.get_year()) {
+                trav = trav->next;
+            }
+            if (trav == tail) {
+                tail->next = newnode;
+                tail = newnode;
+            }
+            else {
+                CountryNode* temp = trav->next;
+                trav->next = newnode;
+                newnode->next = temp;
+            }
+        }
     }
 }
 
@@ -51,9 +62,9 @@ void QueueCountry::pop_front() {
 
 void QueueCountry::print() {
     std::cout << std::endl;
-    std::cout << "Current head: " << this->head->data.get_name() << std::setw(10) << std::left << this->head->data.get_year() 
-              << std::setw(10) << std::left << this->head->data.get_emissions() << std::endl;
-    std::cout << "Tail: " << this->tail->data.get_name() << std::setw(10) << std::left << this->tail->data.get_year() 
-              << std::setw(10) << std::left << this->tail->data.get_emissions() << std::endl;
+    std::cout << "Current head: " << this->head->data.get_name() << std::setw(20) << std::right<< this->head->data.get_year(); 
+    std::cout << std::setw(20) << std::right << this->head->data.get_emissions() << std::endl;
+    std::cout << "        Tail: " << this->tail->data.get_name() << std::setw(20) << std::right << this->tail->data.get_year(); 
+    std::cout << std::setw(20) << std::right << this->tail->data.get_emissions() << std::endl;
     std::cout << std::endl;
 }
