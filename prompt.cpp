@@ -25,6 +25,7 @@ void choose_criteria_customer(Customer* arr, CustomerList customer, int index) {
 
 	insertion_sort_customer(arr, index, customer, choice);
 	choose_displayed_data_customer(arr, index);
+	choose_stack_or_queue();
 }
 
 void choose_criteria_country(Country* arr, CountryList country, int index) {
@@ -38,6 +39,7 @@ void choose_criteria_country(Country* arr, CountryList country, int index) {
 
 	insertion_sort_country(arr, index, country, choice);
 	choose_displayed_data_country(arr, index, choice);
+	choose_stack_or_queue();
 }
 
 void choose_displayed_data_customer(Customer* arr, int index) {
