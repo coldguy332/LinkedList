@@ -106,10 +106,11 @@ bool country_curr_ptr_check(CountryNode*curr, CountryNode* new_node, char choice
 
 /**
  * Inserts a node into a sorted linked list
+ * @https://www.geeksforgeeks.org/cpp-program-for-insertion-sort-in-a-singly-linked-list/#
 */
 void sorted_insert_customer(CustomerNode*& headref, CustomerNode* new_node, char choice) {
     //If sorted list hasn't been created yet, newnode becomes new head of sorted list 
-    //or if the head has a greater value than the newnode, making the newnode the new head
+    //or if the head has a greater value than the newnode, the newnode is the new head
     if (headref == nullptr || customer_head_ptr_check(headref,new_node,choice)) { 
         new_node->next = headref;
         headref = new_node;
@@ -130,6 +131,7 @@ void sorted_insert_customer(CustomerNode*& headref, CustomerNode* new_node, char
 
 /**
  * MAIN INSERTION SORT FUNCTION FOR LISTS
+ * @https://www.geeksforgeeks.org/cpp-program-for-insertion-sort-in-a-singly-linked-list/#
 */
 void customer_sort_list(CustomerList*& customer, char choice) {
     CustomerNode* sorted = nullptr; //Sorted is the head for the sorted lists
@@ -144,6 +146,8 @@ void customer_sort_list(CustomerList*& customer, char choice) {
 
 /**
  * Inserts a node into a sorted linked list
+ * Helper function
+ * @https://www.geeksforgeeks.org/cpp-program-for-insertion-sort-in-a-singly-linked-list/#
 */
 void sorted_insert_country(CountryNode *&headref, CountryNode* new_node, char choice) {
     //If sorted list hasn't been created yet, newnode becomes new head of sorted list 
@@ -166,6 +170,10 @@ void sorted_insert_country(CountryNode *&headref, CountryNode* new_node, char ch
     }
 }
 
+/**
+ * MAIN INSERTION SORT FUNCTION FOR LISTS
+ * @https://www.geeksforgeeks.org/cpp-program-for-insertion-sort-in-a-singly-linked-list/#
+*/
 void country_sort_list(CountryList*& country, char choice) {
     CountryNode* sorted = nullptr; //Sorted is the head for the sorted lists
     CountryNode* curr = country->first; //Iterator starts at lists head ptr;

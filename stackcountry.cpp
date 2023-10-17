@@ -103,7 +103,7 @@ void StackCountry::offload_data(std::ofstream& off) {
     while (trav != nullptr) {
         off << trav->data.get_name() << "," << trav->data.get_year() << "," << trav->data.get_emissions();
         if (trav->next != nullptr) {
-            std::cout << std::endl;
+            off << std::endl;
         }
         trav = trav->next;
     }

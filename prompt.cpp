@@ -303,6 +303,7 @@ void save_stack_customer(StackCustomer*& customer) {
 	char choice;
 	std::cout << std::endl;
 	std::cout << "Would you like to save your stack (Y/n):";
+	std::cin >> choice;
 	if (choice == 'Y' || choice == 'y') {
 		std::ofstream off_file;
 		customer->offload_data(off_file);
@@ -328,6 +329,7 @@ void save_stack_country(StackCountry*& country) {
 	char choice;
 	std::cout << std::endl;
 	std::cout << "Would you like to save your stack (Y/n):";
+	std::cin >> choice;
 	if (choice == 'Y' || choice == 'y') {
 		std::ofstream off_file;
 		country->offload_data(off_file);
@@ -353,7 +355,8 @@ void save_stack_country(StackCountry*& country) {
 void save_queue_customer(QueueCustomer*& customer) {
 	char choice;
 	std::cout << std::endl;
-	std::cout << "Would you like to save your stack (Y/n):";
+	std::cout << "Would you like to save your queue (Y/n):";
+	std::cin >> choice;
 	if (choice == 'Y' || choice == 'y') {
 		std::ofstream off_file;
 		customer->offload_data(off_file);
@@ -378,7 +381,8 @@ void save_queue_customer(QueueCustomer*& customer) {
 void save_queue_country(QueueCountry*& country) {
 	char choice;
 	std::cout << std::endl;
-	std::cout << "Would you like to save your stack (Y/n):";
+	std::cout << "Would you like to save your queue (Y/n):";
+	std::cin >> choice;
 	if (choice == 'Y' || choice == 'y') {
 		std::ofstream off_file;
 		country->offload_data(off_file);

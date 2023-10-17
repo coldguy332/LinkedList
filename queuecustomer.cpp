@@ -117,7 +117,7 @@ void QueueCustomer::offload_data(std::ofstream& off) {
     while (trav != nullptr) {
         off << trav->data.get_first_name() << "," << trav->data.get_last_name() << "," << trav->data.get_total_sales();
         if (trav->next != nullptr) {
-            std::cout << std::endl;
+            off << std::endl;
         }
         trav = trav->next;
     }

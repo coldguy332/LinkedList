@@ -53,7 +53,7 @@ void launch_customer_insertionsort_array(Customer* arr, int size, char choice) {
         high_resolution_clock::time_point t1 = high_resolution_clock::now();
         customer_sort_array(arr,size,choice); //ARray gets sorted
         high_resolution_clock::time_point t2 = high_resolution_clock::now();
-        time += duration_cast<duration<double>>(t2 - t1).count(); //Time gets added up for average
+        time += duration_cast<duration<double> >(t2 - t1).count(); //Time gets added up for average
         if (i != 4) {
             copy_customer_array(arr,copy,size); //Array doesn't get updated the last iteration
             //this is to output data later
@@ -77,7 +77,7 @@ void launch_customer_insertionsort_list(CustomerList*& list, char choice) {
         high_resolution_clock::time_point t1 = high_resolution_clock::now();
         customer_sort_list(list,choice); //List gets sorted
         high_resolution_clock::time_point t2 = high_resolution_clock::now();
-        time += duration_cast<duration<double>>(t2 - t1).count(); //Time gets added up for averfage
+        time += duration_cast<duration<double> >(t2 - t1).count(); //Time gets added up for averfage
         copy_customer_list(list,copy);// List gets copied all 5 iteratoins
     }
 
@@ -102,7 +102,7 @@ void launch_country_insertionsort_array(Country* arr, int size, char choice) {
         high_resolution_clock::time_point t1 = high_resolution_clock::now();
         country_sort_array(arr, size, choice);
         high_resolution_clock::time_point t2 = high_resolution_clock::now();
-        time += duration_cast<duration<double>>(t2 - t1).count();
+        time += duration_cast<duration<double> >(t2 - t1).count();
         if(i != 4) {
             copy_country_array(arr, copy, size);
         }
@@ -124,7 +124,7 @@ void launch_country_insertionsort_list(CountryList*& list, char choice) {
         high_resolution_clock::time_point t1 = high_resolution_clock::now();
         country_sort_list(list,choice);
         high_resolution_clock::time_point t2 = high_resolution_clock::now();
-        time += duration_cast<duration<double>>(t2 - t1).count();
+        time += duration_cast<duration<double> >(t2 - t1).count();
         copy_country_list(list, copy);
     }
     copy->delete_list();
@@ -140,8 +140,9 @@ void launch_country_insertionsort_list(CountryList*& list, char choice) {
 */
 void insertion_sort_country(Country* arr, int size, CountryList*& country, char choice) {
     display_time_borders();
-    launch_country_insertionsort_list(country, choice);
     launch_country_insertionsort_array(arr, size, choice);
+    launch_country_insertionsort_list(country, choice);
+    
 }
 
 /**
@@ -149,6 +150,6 @@ void insertion_sort_country(Country* arr, int size, CountryList*& country, char 
 */
 void insertion_sort_customer(Customer* arr, int size, CustomerList*& customer, char choice) {
     display_time_borders();
-    launch_customer_insertionsort_list(customer,choice);
     launch_customer_insertionsort_array(arr,size,choice);
+    launch_customer_insertionsort_list(customer,choice);
 }

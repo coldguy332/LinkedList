@@ -213,14 +213,14 @@ void stack_fill(char choice) {
     if (choice == 'A') {
         StackCustomer* customer = new StackCustomer; //New stack created
         std::ifstream in_file;
-        in_file.open("customersmall.csv");
+        in_file.open("customer.csv");
         stack_fill_customer(customer, in_file); //Stack filled with customers
         customer_stack_interaction(customer); //Function called from prompt.cpp
     }
     if (choice == 'B') {
         StackCountry* country = new StackCountry; //New stack created
         std::ifstream in_file;
-        in_file.open("smallfile.csv");
+        in_file.open("countries.csv");
         stack_fill_country(country, in_file); //Stack filled with countries
         country_stack_interaction(country); //Function called from prompt.cpp
     }
@@ -323,14 +323,14 @@ void queue_fill(char choice) {
     if (choice == 'A') {
         QueueCustomer* customer = new QueueCustomer; //New customer queue created
         std::ifstream in_file;
-        in_file.open("customersmall.csv");
+        in_file.open("customer.csv");
         queue_fill_customer(customer, in_file); //Customer queue filled with objects
         customer_queue_interaction(customer); //Function called from prompt.cpp
     }
     if (choice == 'B') {
         QueueCountry* country = new QueueCountry; //New contry queue created
         std::ifstream in_file;
-        in_file.open("smallfile.csv");
+        in_file.open("countries.csv");
         queue_fill_country(country, in_file); //Country queue filled with objects
         country_queue_interaction(country); //Function called from prompt.cpp
     }
